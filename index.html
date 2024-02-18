@@ -34,7 +34,6 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
       <link rel="stylesheet" href="w3-colors-flat.css">
    </head> 
 
-
 <script>
         var allergy_count = 0;
         var cold_count = 0;
@@ -95,9 +94,12 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 		<h1>Question 1</h1>
 	</div>
 	
-    	<div id="content" class="w3-container">
-        <p>Put Question 1 content here.</p>    
-    	</div>
+    <div id="content" class="w3-container">
+        <p>Are your eyes watery or itchy?</p>   
+	 <a href="#two" onclick="allergyAdd();" class="w3-btn w3-black"> Yes</a>
+         <a href="#two" onclick="coldAdd();" class="w3-btn w3-black">No</a>
+	<a href="#two" class="w3-btn w3-black">Go to page two</a>    
+    </div><!-- add the commads to go to the next page-->
 </div>
 
 <div class="page" id="two">
@@ -106,13 +108,97 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 	</div>
 	
 	<div id="content" class="w3-container">
-		<p>Content of page 2 goes here.</p>
+		<p>Do you have a fever?</p>
+		 <a href="#two" onclick="allergyAdd();" class="w3-btn w3-black"> Yes</a>
+        	 <a href="#two" onclick="coldAdd();" class="w3-btn w3-black">No</a>
+		 <a href="#three" class="w3-btn w3-black">Go to page three</a>
 	</div>
+	<a href="#one" class="w3-btn w3-black">Previous Question</a>
+        <a href="#three" class="w3-btn w3-black">Next Question</a>
 </div>	
 
+<div class="page" id="three">
+	<div class="w3-container w3-flat-carrot">
+		<h1>Question 3</h1>
+	</div>
+	
+	<div id="content" class="w3-container">
+		<p>Do you have a sore throat?</p>
+		 <a href="#two" onclick="allergyAdd();" class="w3-btn w3-black"> Yes</a>
+                 <a href="#two" onclick="coldAdd();" class="w3-btn w3-black">No</a>
+	<a href="#four" class="w3-btn w3-black">Go to page four</a>
+	</div>
+	<a href="#two" class="w3-btn w3-black">Previous Question</a>
+        <a href="#four" class="w3-btn w3-black">Next Question</a>
+</div>
+
+<div class="page" id="four">
+	<div class="w3-container w3-flat-carrot">
+		<h1>Question 4</h1>
+	</div>
+
+	<div id="content" class="w3-container">
+		<p>Are your symptoms seasonal or chronic?</p>
+		 <a href="#two" onclick="allergyAdd();" class="w3-btn w3-black"> Yes</a>
+                 <a href="#two" onclick="coldAdd();" class="w3-btn w3-black">No</a>
+	</div>
+</div>
+	<div class="page" id="results-page">
+    <div class="w3-container w3-flat-carrot">
+        <h1>Results</h1>
+    </div>
+    
+    <div id="content" class="w3-container">
+        <p id="results"></p>
+    </div>
+</div>
+	
 <footer class="w3-bottom w3-container w3-flat-carrot">
 	<p>DIY!</p>
 </footer>
 
+<!--Script added below-->	
+<script>
+    var answers = [];
+    var allergy_count = 0;
+    var cold_count = 0;
+
+    function answer(choice) {
+        answers.push(choice);
+        nextPage();
+    }
+
+    function nextPage() {
+        var currentPage = getCurrentPage();
+        if (currentPage === "results-page") {
+            calculateResults();
+        } else {
+            history.forward();
+        }
+    }
+
+    function allergyAdd() {
+        allergy_count++;
+        nextPage();
+    }
+
+    function coldAdd() {
+        cold_count++;
+        nextPage();
+    }
+
+    function getCurrentPage() {
+        return document.querySelector('.page:target').id;
+    }
+
+    function calculateResults() {
+        var allergyPercent = (allergy_count / answers.length) * 100;
+        var coldPercent = (cold_count / answers.length) * 100;
+
+        var resultText = document.getElementById("results");
+        resultText.innerHTML = "Probability it is allergies = " + allergyPercent.toFixed(2) + "%<br> Probability it is a cold = " + coldPercent.toFixed(2) + "%";
+    }
+</script>
+	
 </body>
 </html>
