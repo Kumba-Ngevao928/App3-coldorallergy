@@ -168,7 +168,7 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
     function nextPage() {
         var currentPage = getCurrentPage();
         if (currentPage === "results-page") {
-            calculateResults();
+            calculateResults(); // Call calculateResults() function on the results page
         } else {
             history.forward();
         }
@@ -189,8 +189,9 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
     }
 
     function calculateResults() {
-        var allergyPercent = (allergy_count / answers.length) * 100;
-        var coldPercent = (cold_count / answers.length) * 100;
+        var totalResponses = answers.length;
+        var allergyPercent = (allergy_count / totalResponses) * 100;
+        var coldPercent = (cold_count / totalResponses) * 100;
 
         var resultText = document.getElementById("results");
         resultText.innerHTML = "Probability it is allergies = " + allergyPercent.toFixed(2) + "%<br> Probability it is a cold = " + coldPercent.toFixed(2) + "%";
