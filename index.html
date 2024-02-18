@@ -168,7 +168,7 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
     function nextPage() {
         var currentPage = getCurrentPage();
         if (currentPage === "results-page") {
-            calculateResults(); // Call calculateResults() function on the results page
+            calculateResults();
         } else {
             history.forward();
         }
