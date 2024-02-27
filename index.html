@@ -20,10 +20,8 @@ Brief Description of Goal of Code:
 The goal of this code is to be able to use diagnostic technologies to be able to distinguish between the symptoms given if said condition is a cold or seasonal allergies.
  
 Known Issues:
-blah, blah, blah, blah
-
-https://www.w3schools.com/w3css/default.asp
-https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-file
+Oncee user is completed entering their symptoms results will not pop up after slicking show results.
+After ckilcking view result app will go back to first page instead of showing resluts. 	
 -->
 	
    <head> 
@@ -90,6 +88,7 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 	<p>THIS CODE SHOULD NOT BE USED TO DIAGNOSE ANY KIND OF MEDICAL CONDITION.</p>
 
 <div class="page" id="one">
+<!-- page one of the app, with the first set of questions-->	
 	<div id="header" class="w3-container w3-flat-carrot">
 		<h1>Question 1</h1>
 	</div>
@@ -97,12 +96,12 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
     <div id="content" class="w3-container">
         <p>Are your eyes watery or itchy?</p>   
 	 <a href="#two" onclick="allergyAdd();" class="w3-btn w3-black"> Yes</a>
-         <a href="#two" onclick="coldAdd();" class="w3-btn w3-black">No</a>
-	<a href="#two" class="w3-btn w3-black">Go to page two</a>    
-    </div><!-- add the commads to go to the next page-->
+         <a href="#two" onclick="coldAdd();" class="w3-btn w3-black">No</a>   
+    </div><!-- These HTML codes create the yes and no buttons for the user to imput their answers-->
 </div>
 
 <div class="page" id="two">
+<!-- page two of the app, with the second set of questions-->
 	<div class="w3-container w3-flat-carrot">
 		<h1>Question 2</h1>
 	</div>
@@ -111,11 +110,13 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 		<p>Do you have a fever?</p>
 		 <a href="#three" onclick="allergyAdd();" class="w3-btn w3-black"> Yes</a>
         	 <a href="#three" onclick="coldAdd();" class="w3-btn w3-black">No</a>
-		 <a href="#three" class="w3-btn w3-black">Go to page three</a>
-	</div><!-- deleted the commands for previous page options as after question one the app didnt work correctly-->
+	<!--These HTML codes create the yes and no buttons for the user to imput their answers-->
+	<!-- Deleted the commands for previous page and next page options as after question one the app didnt work correctly-->	
+	</div>
 </div>	
 
 <div class="page" id="three">
+<!-- page three of the app, with the third set of questions-->	
 	<div class="w3-container w3-flat-carrot">
 		<h1>Question 3</h1>
 	</div>
@@ -124,11 +125,13 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 		<p>Do you have a sore throat?</p>
 		 <a href="#four" onclick="allergyAdd();" class="w3-btn w3-black"> Yes</a>
                  <a href="#four" onclick="coldAdd();" class="w3-btn w3-black">No</a>
-		 <a href="#four" class="w3-btn w3-black">Go to page four</a>
+	<!--These HTML codes create the yes and no buttons for the user to imput their answers-->
+	<!-- Deleted the commands for previous page and next page options as after question one the app didnt work correctly-->
 	</div>
 </div>
 
 <div class="page" id="four">
+<!-- page four of the app, with the last set of questions-->	
 	<div class="w3-container w3-flat-carrot">
 		<h1>Question 4</h1>
 	</div>
@@ -137,7 +140,8 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 		<p>Are your symptoms seasonal or chronic?</p>
 		<a href="#results-page" onclick="allergyAdd();" class="w3-btn w3-black"> Yes</a>
 		<a href="#results-page" onclick="coldAdd();" class="w3-btn w3-black">No</a>
-
+	<!--These HTML codes create the yes and no buttons for the user to imput their answers-->
+	<!-- Deleted the commands for previous page and next page options as after question one the app didnt work correctly-->
 	</div>
 </div>
 	<div class="page" id="results-page">
@@ -146,7 +150,12 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
     </div>
     
     <div id="content5" class="w3-container">
+	<!-- Tried to correct the function call by calling the the results (calculateResults()) directly-->	    
         <p id="results"></p>
+	    <script>
+		    calculateResults(); // This line was added to call calculateResults() when the results page is loaded, PS still doesnt work
+	    </script>
+		 <a href="#" onclick="calculateResults();" class="w3-btn w3-black"> Show Results </a>   
     </div>
 </div>
 	
