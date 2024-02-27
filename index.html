@@ -23,35 +23,32 @@ Known Issues:
 Oncee user is completed entering their symptoms results will not pop up after slicking show results.
 After ckilcking view result app will go back to first page instead of showing resluts. 	
 -->
+
 	
-   <head> 
+<head> 
+<!-- Metadata section -->
       <title>Hello World</title>  
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <meta name="apple-mobile-web-app-capable" content="yes">
       <link rel="stylesheet" href="w3.css">
       <link rel="stylesheet" href="w3-colors-flat.css">
-   </head> 
+</head> 
 
 <script>
+ // Labeled variables and functions to be used throughout the code
         var allergy_count = 0;
         var cold_count = 0;
-
-
         function allergyAdd(){
             allergy_count = allergy_count + 1;
 		alert(allergy_count);
-
         }
-
         function coldAdd(){
             cold_count = cold_count + 1;
         }
-
   </script>
 
-
-
-<style>	
+  <style>
+/* CSS style coding, tells how the app will look*/ 	  
 .body {
      margin: 0em;
 }
@@ -74,138 +71,130 @@ After ckilcking view result app will go back to first page instead of showing re
 </style>
 
 <body>
-<div id="header" class="w3-container w3-flat-carrot">
-	<h1>Cold or Allergies?</h1>
-</div>
+	<!-- Content section-->
+	<div id="header" class="w3-container w3-flat-carrot">
+		<!-- Header-->	
+		<h1>Cold or Allergies?</h1>
+	</div>
 	
-<div id="content" class="w3-container">
+	<div id="content" class="w3-container">
+	<!-- Question that appears on page, main content-->	
 	<p>Are you feeling like you might have a cold but wonder if it is allergies. Answer a few short questions to find out!</p>
 	
 	<a href="#one" class="w3-btn w3-grey w3-round"> Get Started </a>
-	
+	<!-- Information/discalimer about the code-->
 	<p>The following code has been developed by students and/or researchers of the Freshman Research Initiative DIY Diagnostics Stream at The University of Texas at 		Austin.  This code is shared for demonstration purposes and should not be considered a product -- it is for entertainment purposes only. Any user of this code 			does so at their own risk. Members of the DIY Stream, FRI, and The University of Texas system are not liable for anything related to this code.</p>
  	
 	<p>THIS CODE SHOULD NOT BE USED TO DIAGNOSE ANY KIND OF MEDICAL CONDITION.</p>
-
-<div class="page" id="one">
-<!-- page one of the app, with the first set of questions-->	
-	<div id="header" class="w3-container w3-flat-carrot">
-		<h1>Question 1</h1>
+	<!-- Pages with the questions start below-->
+	<!-- page one of the app, with the first set of questions-->
+	<div class="page" id="one">	
+		<div id="header" class="w3-container w3-flat-carrot">
+			<h1>Question 1</h1>
+		</div>
+    		<div id="content" class="w3-container">
+       		 	<p>Are your eyes watery or itchy?</p>   
+	 		<a href="#two" onclick="allergyAdd();" class="w3-btn w3-black"> Yes</a>
+         		<a href="#two" onclick="coldAdd();" class="w3-btn w3-black">No</a>   
+    		</div><!-- These HTML codes create the yes and no buttons for the user to imput their answers-->
 	</div>
-	
-    <div id="content" class="w3-container">
-        <p>Are your eyes watery or itchy?</p>   
-	 <a href="#two" onclick="allergyAdd();" class="w3-btn w3-black"> Yes</a>
-         <a href="#two" onclick="coldAdd();" class="w3-btn w3-black">No</a>   
-    </div><!-- These HTML codes create the yes and no buttons for the user to imput their answers-->
-</div>
-
-<div class="page" id="two">
-<!-- page two of the app, with the second set of questions-->
-	<div class="w3-container w3-flat-carrot">
-		<h1>Question 2</h1>
+	<!-- Page two of the app, with the second set of questions-->
+	<div class="page" id="two">
+		<div class="w3-container w3-flat-carrot">
+			<h1>Question 2</h1>
+		</div>
+		<div id="content2" class="w3-container">
+			<p>Do you have a fever?</p>
+		 	<a href="#three" onclick="allergyAdd();" class="w3-btn w3-black"> Yes</a>
+        	 	<a href="#three" onclick="coldAdd();" class="w3-btn w3-black">No</a>
+		</div><!--These HTML codes create the yes and no buttons for the user to imput their answers, Deleted the commands for previous page and next page options as after question one the app didnt work correctly-->	
+	</div>	
+	<!-- page three of the app, with the third set of questions-->
+	<div class="page" id="three">	
+		<div class="w3-container w3-flat-carrot">
+			<h1>Question 3</h1>
+		</div>
+		<div id="content3" class="w3-container">
+			<p>Do you have a sore throat?</p>
+		 	<a href="#four" onclick="allergyAdd();" class="w3-btn w3-black"> Yes</a>
+                 	<a href="#four" onclick="coldAdd();" class="w3-btn w3-black">No</a>
+		</div><!--These HTML codes create the yes and no buttons for the user to imput their answers, Deleted the commands for previous page and next page options as after question one the app didnt work correctly-->	
 	</div>
-	
-	<div id="content2" class="w3-container">
-		<p>Do you have a fever?</p>
-		 <a href="#three" onclick="allergyAdd();" class="w3-btn w3-black"> Yes</a>
-        	 <a href="#three" onclick="coldAdd();" class="w3-btn w3-black">No</a>
-	<!--These HTML codes create the yes and no buttons for the user to imput their answers-->
-	<!-- Deleted the commands for previous page and next page options as after question one the app didnt work correctly-->	
+	<!-- page four of the app, with the last set of questions-->
+	<div class="page" id="four">
+		<div class="w3-container w3-flat-carrot">
+			<h1>Question 4</h1>
+		</div>
+		<div id="content4" class="w3-container">
+			<p>Are your symptoms seasonal or chronic?</p>
+			<a href="#results-page" onclick="allergyAdd();" class="w3-btn w3-black"> Yes</a>
+			<a href="#results-page" onclick="coldAdd();" class="w3-btn w3-black">No</a>
+	  	</div><!--These HTML codes create the yes and no buttons for the user to imput their answers, Deleted the commands for previous page and next page options as after question one the app didnt work correctly-->
 	</div>
-</div>	
-
-<div class="page" id="three">
-<!-- page three of the app, with the third set of questions-->	
-	<div class="w3-container w3-flat-carrot">
-		<h1>Question 3</h1>
-	</div>
-	
-	<div id="content3" class="w3-container">
-		<p>Do you have a sore throat?</p>
-		 <a href="#four" onclick="allergyAdd();" class="w3-btn w3-black"> Yes</a>
-                 <a href="#four" onclick="coldAdd();" class="w3-btn w3-black">No</a>
-	<!--These HTML codes create the yes and no buttons for the user to imput their answers-->
-	<!-- Deleted the commands for previous page and next page options as after question one the app didnt work correctly-->
-	</div>
-</div>
-
-<div class="page" id="four">
-<!-- page four of the app, with the last set of questions-->	
-	<div class="w3-container w3-flat-carrot">
-		<h1>Question 4</h1>
-	</div>
-
-	<div id="content4" class="w3-container">
-		<p>Are your symptoms seasonal or chronic?</p>
-		<a href="#results-page" onclick="allergyAdd();" class="w3-btn w3-black"> Yes</a>
-		<a href="#results-page" onclick="coldAdd();" class="w3-btn w3-black">No</a>
-	<!--These HTML codes create the yes and no buttons for the user to imput their answers-->
-	<!-- Deleted the commands for previous page and next page options as after question one the app didnt work correctly-->
-	</div>
-</div>
+	<!-- Results page-->	
 	<div class="page" id="results-page">
-    <div class="w3-container w3-flat-carrot">
-        <h1>Results</h1>
-    </div>
-    <div id="content5" class="w3-container">
-	<!-- Tried to correct the function call by calling the the results (calculateResults()) directly-->	    
-        <p id="results"></p>
-	    <script>
-		    calculateResults(); // This line was added to call calculateResults() when the results page is loaded, PS still doesnt work, shows infinity
-	    <a href="#" onclick="calculateResults();" class="w3-btn w3-black"> Show Results </a>
-	    </script>   
-    </div>
-</div>
-	
+    		<div class="w3-container w3-flat-carrot">
+        		<h1>Results</h1>
+    		</div>	
+    		<div id="content5" class="w3-container">
+		<!-- Tried to correct the function call by calling the the results (calculateResults()) directly-->	    
+       	 		<p id="results"></p>
+			<!-- Script for displaying results, not working (known issue)-->
+			<script>	
+			calculateResults(); // This line was added to call calculateResults() when the results page is loaded, PS still doesnt work, shows infinity
+	    		<a href="#" onclick="calculateResults();" class="w3-btn w3-black"> Show Results </a>
+			</script>   
+    		</div>
+	</div>
 <footer class="w3-bottom w3-container w3-flat-carrot">
 <!-- container class for the orange footer of the APP-->	
 	<p>DIY!</p>
 </footer>
 
-<!--Script added below-->	
-<script>
-    var answers = [];
-    var allergy_count = 0;
-    var cold_count = 0;
+	<!--Script added below-->	
+	<script>
+    var answers = []; // Array to store responses to questions
+    var allergy_count = 0; // Counter for the number of responses for allergies
+    var cold_count = 0; // Counter for the number of responses for cold
 
-    function answer(choice) {
-        answers.push(choice);
-        nextPage();
+    function answer(choice) { // Function called when the user selects an answer to a question
+        answers.push(choice); // Push the user's choice into the array
+        nextPage(); // Go to the next page
     }
 
-    function nextPage() {
-        var currentPage = getCurrentPage();
+    function nextPage() { // Function used to determine which page to go to next
+        var currentPage = getCurrentPage(); // Get current page ID
         if (currentPage === "results-page") {
             calculateResults();
-        } else {
-            history.forward();
+        } else { 
+            history.forward(); // Move forwrd in browser history if needed
         }
     }
 
-    function allergyAdd() {
-        allergy_count++;
-        nextPage();
+    function allergyAdd() { // Function called when answer indicates allergy symptoms
+        allergy_count++; // allergy count
+        nextPage(); // Move to next page
     }
 
-    function coldAdd() {
-        cold_count++;
-        nextPage();
+    function coldAdd() { // Function called when answer indicate cold symptoms
+        cold_count++; // cold count
+        nextPage(); // move to next page
     }
 
-    function getCurrentPage() {
-        return document.querySelector('.page:target').id;
+    function getCurrentPage() { // ID of current page
+        return document.querySelector('.page:target').id; //Query language for targeted page
     }
 
-    function calculateResults() {
-        var totalResponses = answers.length;
-        var allergyPercent = (allergy_count / 4) * 100;
-        var coldPercent = (cold_count / 4) * 100;
+    function calculateResults() { // Function to calculate and display the results based on user responses
+        var totalResponses = answers.length; // Calculate the total number of responses
+        var allergyPercent = (allergy_count / 4) * 100; // Calculate the percentage of responses indicating having allergies
+        var coldPercent = (cold_count / 4) * 100; // Calculate the percentage of responses indicating a cold
 
-        var resultText = document.getElementById("results");
-        resultText.innerHTML = "Probability it is allergies = " + allergyPercent + "<br> Probability it is a cold = " + coldPercent;
-    }
-</script>
+        var resultText = document.getElementById("results"); // Get the element (HTML) to display the results
+       // Update to show the calculated probabilities
+	resultText.innerHTML = "Probability it is allergies = " + allergyPercent + "<br> Probability it is a cold = " + coldPercent;
+    } 
+	</script>
 	<p id="results"></p>
 	
 </body>
