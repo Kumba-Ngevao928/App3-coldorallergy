@@ -148,17 +148,18 @@ After ckilcking view result app will go back to first page instead of showing re
     <div class="w3-container w3-flat-carrot">
         <h1>Results</h1>
     </div>
-    
     <div id="content5" class="w3-container">
 	<!-- Tried to correct the function call by calling the the results (calculateResults()) directly-->	    
         <p id="results"></p>
 	    <script>
-		    calculateResults(); // This line was added to call calculateResults() when the results page is loaded, PS still doesnt work
+		    calculateResults(); // This line was added to call calculateResults() when the results page is loaded, PS still doesnt work, shows infinity
+	    <a href="#" onclick="calculateResults();" class="w3-btn w3-black"> Show Results </a>
 	    </script>   
     </div>
 </div>
 	
 <footer class="w3-bottom w3-container w3-flat-carrot">
+<!-- container class for the orange footer of the APP-->	
 	<p>DIY!</p>
 </footer>
 
