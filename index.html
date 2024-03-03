@@ -37,16 +37,21 @@ None, results problem has been fixed. It was due to the missing function in the 
  // Labeled variables and functions to be used throughout the code
         var allergy_count = 0;
         var cold_count = 0;
+// Function to increment allergy count and display  the alert
         function allergyAdd(){
             allergy_count = allergy_count + 1;
 		alert(allergy_count);
         }
+// Function to increment cold count
         function coldAdd(){
             cold_count = cold_count + 1;
         }
+// Function to calculate percentage probability of cold or allergy
 	function percentage(){
+// Calculating the percentahe based on the counts
             allergyp = (allergy_count/4)*100
             coldp = (cold_count/4)*100
+// Code to display the results
         var results = document.getElementById("results")
             results.innerHTML = "probability it is allergies =" + allergyp + "%" + "<br> probability it is cold=" + coldp + "%"
         }
@@ -138,12 +143,15 @@ None, results problem has been fixed. It was due to the missing function in the 
 	</div>
 	<!-- Results page-->	
 	<div class="page" id="results-page">
+	<!--Container for the header of the results page-->
     		<div class="w3-container w3-flat-carrot">
         		<h1>Results</h1>
     		</div>	
     		<div id="content5" class="w3-container">
+	<!-- Button for triggering the calculation of probabilities, linked to the JavaScript function percentage()-->
 		<button class="w3-button w3-black" onclick="percentage()">Calculate</button>	    
-       	 	<p id="results"></p> 
+       	<!-- Paragraph element to display the calculated results-->
+		<p id="results"></p> 
     		</div>
 	</div>
 <footer class="w3-bottom w3-container w3-flat-carrot">
